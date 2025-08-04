@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--My style-->
+
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/order.css" />
+
+  <!-- style icon awesom-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- style feather icon -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <script>
+    feather.replace();
+  </script>
+   
+  <title>Achan Computer</title>
+</head>
+
+<!-- Notifikasi Toko Tutup -->
+<div id="notifikasiToko">
+  Toko tutup, buka pukul 07:00 - 21:00
+</div>
+
+<!-- iklan pembuka pop up -->
+<div class="lightbox-overlay" id="popupLightbox" style="background-color;background: linear-gradient(to right, #e60000, #ff9000);">
+  <span class="close-lightbox" onclick="closeBox()">&times;</span>
+  <div class="lightbox-content">  
+    <h2>SELAMAT DATANG!</h2>
+    <img src="img/logo/logo.png">
+    <h2>ACHAN COMPUTER</h2>
+    <p>Dapatkan diskon 10% untuk pembelian pertama Anda 🎉</p>
+  </div>
+</div>
+
+<!-- menua header login & keranjang Star--->    
+<div id="auth-buttons" class="auth-buttons" style="text-align:right;">
+      
+  <span id="welcomeText" onclick="toggleUserPanel()">
+  </span>
+
+  <span id="authBarAvatar" class="auth-bar-avatar" onclick="toggleUserPanel()" style="display:none;">
+    <i class="fas fa-user-circle" id="authBarAvatarIcon"></i>
+  </span>
+      
+  <span id="profileIcon" class="profile-icon" style="display:none;" onclick="toggleUserPanel()">
+    <!-- <i class="fas fa-user-circle" ></i>        -->
+  </span>
+            
+  <a href="#" id="btnDaftar" class="register-btn" onclick="tampilkanDaftar()">Daftar</a> 
+      
+  <a href="#" id="btnLogin" class="login-btn" onclick="tampilkanLogin()">Login </a>
+                    
+  <a href="#" id="btnLogout" class="logout-btn" onclick="logout()">Logout</a> 
+                            
+</div>
+
+<!--keranjang belanja -->
+<div class="keranjang" id="keranjang" onclick="tampilkanModal()" >
+  <i class="fa-solid fa-cart-shopping"></i>
+    <span id="badge">0</span>
+</div> 
+<!-- menua header login & keranjang End --->
+  
+<!-- menua header navigsi Star--->
+<nav>    
+<div class="nav-container">
+  <div class="logo">Achan Computer</div>
+    <div class="nav-right">
+        <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+  <ul id="menu">
+    <li>
+      <a href="#">Home</a>
+    </li>
+
+    <li>
+      <a href="#about">Tentang Kami</a>
+    </li>
+
+  <li class="has-submenu">
+        <a href="#order">Order ▼</a>
+        <ul class="submenu">
+            <li><a href="#order-pc">▶ Laptop/PC</a></li>
+            <li><a href="#order-sparepart">▶ Sparepart</a></li>
+        </ul>
+  </li>
+
+            <li>
+            <a href="#galery">Galery</a>
+            </li>
+
+            <li>
+            <a href="#service">Layanan</a>
+            </li>
+
+            <li>
+            <a href="#kontak">Kontak</a>
+            </li>
+
+            <button id="themeToggle" class="toggle-btn" aria-label="Toggle dark mode">
+            <i data-feather="moon"></i>
+            </button>
+
+    </ul>
+  </div>
+</nav>
+<!-- menua header navigsi End--->
+                   
+<!-- menua hero dan sider Star--->        
+<section id="hero" class="hero">
+<!-- Slider Star -->
+<div class="slider-container">       
+  <div class="slider-track" id="sliderTrack">
+    <div class="slide">
+      <img src="img/slide/achanComputer1.jpg" alt="Produk 1" />
+      <div class="overlay">
+        <div class="overlay-text"></div>
+      </div>     
+    </div>
+
+    <div class="slide">
+      <img src="img/slide/achanComputer2.jpg" alt="Produk 2" />
+      <div class="overlay">
+        <div class="overlay-text"></div>
+      </div>
+    </div>
+  
+    <div class="slide">
+      <img src="img/slide/achanComputer1.jpg" alt="Produk 3" />
+      <div class="overlay">
+        <div class="overlay-text"></div>          
+      </div>
+    </div>
+    
+    <div class="slide">
+      <img src="img/slide/achanComputer4.jpg" alt="Produk 4" />
+      <div class="overlay">
+        <div class="overlay-text"></div>          
+      </div>
+    </div>
+  </div>
+</div>
+        
+<!-- Slider End -->
+           
+<h2>Mengapa pilih kami?</h2>
+<div class="hero-grid">
+  <div class="hero-item hidden">
+    <div class="service-icon"><i class="fa-solid fa-laptop"></i></div>
+    <div class="service-title">Paling Lengkap</div>
+    <div class="service-desc">
+      Kami menyediakan berbagai pilihan komputer atau Laptop bekas berkualitas dengan harga terjangkau.
+    </div>
+  </div>
+
+  <div class="hero-item hidden">
+    <div class="service-icon">
+      <i class="fa-solid fa-gauge-high"></i>
+    </div>
+    <div class="service-title">Proses Cepat</div>
+    <div class="service-desc">
+      Kami memberikan proses pelayanan yang cepat dan penawaran hingga mencapai kesepakatan bersama.
+    </div>
+  </div>
+
+  <div class="hero-item hidden">
+    <div class="service-icon">
+      <i class="fa-solid fa-thumbs-up"></i>
+    </div>
+    <div class="service-title">Aman & Terpercaya</div>
+    <div class="service-desc">
+      Kami telah melayani banyak konsumen di berbagai kota seluruh indonesia sejak 2015 dengan data transaksi yang aman
+    </div>
+  </div>
+            
+    <div class="hero-item hidden">
+      <div class="service-icon"><i class="fa-solid fa-money-check-dollar"></i>
+      </div>
+      <div class="service-title">Harga terjangkau</div>
+      <div class="service-desc">
+        Kami memberikan harga terbaik dan terjangkau tanpa mengurangi kualitas dari spek kami
+      </div>
+    </div>
+  </div>
+</section>
+      
+<!-- Section Tentang Kami Star -->
+<section id="about" class="about">
+  <h2>Tentang <span>Kami</span></h2>
+
+<!-- meletakan gambar dan teks berdampingan -->
+  <div class="row">
+    <div class="about-img">
+      <img src="img/galery/image1.jpg" alt="Tentang Kami" />
+    </div>
+
+    <div class="content">
+      <p>
+        Achan komputer adalah usaha yang bergerak dibidang Pembelian Barang Bekas Kantor dengan harga maksimal baik
+        satuan maupun borongan seperti Cpu bekas, laptop bekas, server bekas, monitor bekas, networking bekas, dll.
+        Kami juga merupakan usaha yang bergerak dibidang jual beli komputer bekas, laptop bekas, monitor bekas, server
+        bekas, printer bekas, spare part komputer, dan produk IT lainnya. Menjaga kepercayaan customer serta
+        menyediakan layanan dengan ramah, tepat, dan akurat menjadi fokus utama. Mengawali dengan perkataan,
+        pemikiran, dan tindakan yang baik maka akan menghasilkan suatu kedekatan yang positif antara kami dengan anda
+        sebagai customer kami. Achan Komputer beroperasi sepenuhnya sesuai dengan hukum yang berlaku dan tidak akan
+        menerima, memperjualbelikan, atau terlibat dalam aktivitas terkait barang-barang curian atau ilegal lainnya.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- About section End -->
+    
+      
+<!-- Section order laptop & pc Star -->
+<section id="order-pc" class="order-pc">
+  <h2>Order Laptop & PC</h2>
+<!--produk id=1--->
+<div class="produk">
+  <div id="productGrid" class="product-grid">
+
+      <div class="produk">
+        <div class="produk-item" data-id="1" data-nama="Apple MacBook Air 13‑inch" data-harga="6750000" data-stok="5">
+            <div class="gambar-wrapper"> 
+            <img src="img/produk/achanComputer1.jpg" alt="Monitor" />
+            <div class="label-wrapper">
+            <div class="label ongkir">Ongkir Gratis</div>
+            <div class="label diskon">Diskon 10%</div>
+        </div>
+      </div>    
+     <h4>Apple MacBook Air 13‑inch</h4>
+     <p class="deskripsi">sangat ringan, baterai awet, ideal untuk produktivitas, multitasking, dan pelajar.</p>
+         <p><strong>Rp 6.750.000</strong> <span class="harga-coret">Rp 7.500.000</span></p> 
+      <div class="btn-container">
+        <button class="btn-cart" onclick="tambahKeKeranjang(this)">Tambah ke Troli</button>
+        <button class="btn-beli" onclick="beliSekarang(this)">Beli Sekarang</button>
+      </div>
+    </div>
+  </div>
+   
+  <!--produk id=2--->
+ <div class="produk">
+   <div class="produk-item" data-id="2" data-nama="Samsung Galaxy Book5 Pro" data-harga="8550000" data-stok="5">
+     <div class="gambar-wrapper">
+     <img src="img/produk/achanComputer2.jpg" alt="Laptop" />
+    <div class="label-wrapper">
+     <div class="label ongkir">Ongkir Gratis</div>
+     <div class="label diskon">Diskon 10%</div>
+   </div>
+ </div>    
+     <h4>Samsung Galaxy Book5 Pro</h4>
+           <p class="deskripsi">desain elegan, performa solid untuk pekerjaan dan multimedia, ideal untuk pengguna profesional.</p>
+         <p><strong>Rp 8.550.000</strong> <span class="harga-coret">Rp 9.500.000</span></p> 
+     <div class="btn-container">
+       <button class="btn-cart" onclick="tambahKeKeranjang(this)">Tambah ke Troli</button>
+       <button class="btn-beli" onclick="beliSekarang(this)">Beli Sekarang</button>
+     </div>
+   </div>
+ </div>
+   
+  <!--produk id=3--->
+  <div class="produk">
+    <div class="produk-item" data-id="3" data-nama="Asus ROG Zephyrus G14" data-harga="10800000" data-stok="5">
+      <div class="gambar-wrapper">
+        <img src="img/produk/achanComputer3.jpg" alt="Laptop" />
+        <div class="label-wrapper">
+        <div class="label ongkir">Ongkir Gratis</div>
+        <div class="label diskon">Diskon 10%</div>
+      </div>
+    </div>    
+      <h4>Asus ROG Zephyrus G14</h4>
+      <p class="deskripsi">laptop gaming ultraportable 14‑inch, kinerja tinggi, cocok untuk gamer performa maksimal.</p>
+          <p><strong>Rp 10.800.000</strong> <span class="harga-coret">Rp 12.000.000</span></p> 
+      <div class="btn-container">
+        <button class="btn-cart" onclick="tambahKeKeranjang(this)">Tambah ke Troli</button>
+        <button class="btn-beli" onclick="beliSekarang(this)">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+    
+    <!--produk id=4--->
+    <div class="produk">
+      <div class="produk-item" data-id="4" data-nama="Super PC Komputer" data-harga="4000000" data-stok="5">
+        <div class="gambar-wrapper">
+        <img src="img/produk/achanComputer4.jpg" alt="Laptop" />
+        <div class="label-wrapper">
+        <div class="label ongkir">Ongkir Gratis</div>
+        <div class="label diskon">Diskon 10%</div>
+      </div>
+      </div>    
+        <h4>Super PC Komputer</h4>
+        <p class="deskripsi">Super PC full HD, 24 inc cocok untuk gaming, desain grafis dan ntuk keperluan kantor spesifikasi handal.</p>
+            <p><strong>Rp 4.000.000</strong> <span class="harga-coret">Rp 4.400.000</span></p> 
+          <div class="btn-container">
+            <button class="btn-cart" onclick="tambahKeKeranjang(this)">Tambah ke Troli</button>
+            <button class="btn-beli" onclick="beliSekarang(this)">Beli Sekarang</button>
+            </div>
+          </div>
+     </div>
+  </div>
+ </div>
+</section>     
+<!-- Section order laptop & pc End -->
+  
+<!-- Section order sparepart Star -->
+<section id="order-sparepart" class="order-sparepart">
+  <h2>Order Sparepart</h2>
+
+<!--produk id=5--->
+<div class="produk">
+<div id="productGrid" class="product-grid">
+
+  <div class="produk">
+      <div class="produk-item" data-id="5" data-nama="Power Supplay 750 W" data-harga="350000" data-stok="5">
+        <div class="gambar-wrapper"> 
+        <img src="img/produk/psu1.jpg" alt="PSU" />
+        <div class="label-wrapper">
+        <div class="label ongkir">Ongkir Gratis</div>
+        <div class="label diskon">Diskon 10%</div>
+      </div>
+    </div>    
+    <h4>Power Supplay 750 W</h4>
+    <p class="deskripsi">be quiet! Straight Power 12 – hingga 750 W, efisiensi tinggi (Gold), modul penuh.</p>
+        <p><strong>Rp 350.000</strong> <span class="harga-coret">Rp 385.000</span></p> 
+        <div class="btn-container">
+          <button class="btn-cart" onclick="tambahKeKeranjang(this)">Tambah ke Troli</button>
+          <button class="btn-beli" onclick="beliSekarang(this)">Beli Sekarang</button>
+        </div>
+    </div>
+  </div>
+
+    <!--produk id=6--->
+    <div class="produk">
+     <div class="produk-item" data-id="6" data-nama="RAM DDR5 16 GB" data-harga="400000" data-stok="5">
+        <div class="gambar-wrapper">
+          <img src="img/produk/ram1.jpg" alt="RAM" />
+          <div class="label-wrapper">
+          <div class="label ongkir">Ongkir Gratis</div>
+          <div class="label diskon">Diskon 10%</div>
+        </div>
+      </div>    
+      <h4>RAM DDR5 16 GB </h4>
+          <p class="deskripsi">Crucial DDR5‑5600 16 GB dan 32 GB hingga 64 GB, SO‑DIMM, kecepatan tinggi</p>
+        <p><strong>Rp 400.000</strong> <span class="harga-coret">Rp 440.000</span></p> 
+        <div class="btn-container">
+          <button class="btn-cart" onclick="tambahKeKeranjang(this)">Tambah ke Troli</button>
+          <button class="btn-beli" onclick="beliSekarang(this)">Beli Sekarang</button>
+        </div>
+    </div>
+  </div>
+
+
+    <!--produk id=7--->
+    <div class="produk">
+      <div class="produk-item" data-id="7" data-nama="SSD NVMe PCIe 5.0" data-harga="1800000" data-stok="5">
+         <div class="gambar-wrapper">
+            <img src="img/produk/ssd1.jpg" alt="SSD" />
+            <div class="label-wrapper">
+            <div class="label ongkir">Ongkir Gratis</div>
+            <div class="label diskon">Diskon 10%</div>
+        </div>
+      </div>    
+    <h4>SSD NVMe PCIe 5.0</h4>
+    <p class="deskripsi">Konsumsi daya lebih efisien, lebih sedikit panas dengan model heatsink.kapaitas hingga ada yang 1TB</p>
+        <p><strong>Rp 1.800.000</strong> <span class="harga-coret">Rp 1.980.000</span></p> 
+        <div class="btn-container">
+          <button class="btn-cart" onclick="tambahKeKeranjang(this)">Tambah ke Troli</button>
+          <button class="btn-beli" onclick="beliSekarang(this)">Beli Sekarang</button>
+        </div>
+    </div>
+  </div>
+
+   <!--produk id=8--->
+    <div class="produk">
+        <div class="produk-item" data-id="8" data-nama="USB ADAPTER Type C" data-harga="15000" data-stok="5">
+            <div class="gambar-wrapper">
+              <img src="img/produk/usbPutih.jpg" alt="USB ADAPTER" />
+              <div class="label-wrapper">
+              <div class="label ongkir">Ongkir Gratis</div>
+              <div class="label diskon">Diskon 10%</div>
+            </div>
+        </div>    
+    <h4>USB Adapter Type C</h4>
+    <p class="deskripsi">sangat mudah dibawa, pas di keyring, ideal untuk backup ringan dan transfer dokumen..</p>
+        <p><strong>Rp 15.000</strong> <span class="harga-coret">Rp 16.500</span></p> 
+          <div class="btn-container">
+            <button class="btn-cart" onclick="tambahKeKeranjang(this)">Tambah ke Troli</button>
+            <button class="btn-beli" onclick="beliSekarang(this)">Beli Sekarang</button>
+          </div>
+     </div>
+    </div>
+
+  </div>
+  </div>
+</section>     
+<!-- Section sparepart End -->
+  
+  
+<!-- Section galery Star -->
+<section id="galery" class="galery">
+  <h2>Foto Galery</h2>
+
+  <div class="gallery">
+    <div class="gallery-item hidden" data-img="img/galery/image1.jpg">
+      <img src="img/galery/image1.jpg" alt="Gambar 1">
+      <div class="overlay">
+        <i><i data-feather="zoom-in"></i></i>
+      </div>
+    </div>
+
+    <div class="gallery-item hidden" data-img="img/galery/image2.jpg">
+      <img src="img/galery/image2.jpg" alt="Gambar 2">
+      <div class="overlay">
+        <i data-feather="zoom-in"></i>
+      </div>
+    </div>
+
+    <div class="gallery-item hidden" data-img="img/galery/image3.jpg">
+      <img src="img/galery/image3.jpg" alt="Gambar 3">
+      <div class="overlay">
+        <i data-feather="zoom-in"></i>
+      </div>
+    </div>
+<div class="gallery-item hidden" data-img="img/galery/image4.jpg">
+        <img src="img/galery/image4.jpg" alt="Gambar 3">
+        <div class="overlay">
+          <i data-feather="zoom-in"></i>
+        </div>
+      </div>
+
+      <div class="gallery-item hidden" data-img="img/galery/image5.jpg">
+        <img src="img/galery/image5.jpg" alt="Gambar 3">
+        <div class="overlay">
+          <i data-feather="zoom-in"></i>
+        </div>
+      </div>
+
+      <div class="gallery-item hidden" data-img="img/galery/image6.jpg">
+        <img src="img/galery/image6.jpg" alt="Gambar 3">
+        <div class="overlay">
+          <i data-feather="zoom-in"></i>
+        </div>
+      </div>
+
+      <!-- cuma lightbox -->
+      <div class="lightbox" id="lightbox">
+        <span class="close" id="closeBtn">&times;</span>
+        <img src="" alt="Large Preview" id="lightbox-img">
+      </div>
+
+  </section>
+<!-- Section galry End -->
+
+            
+<!-- Section Layanan Kami Star -->
+  <section id="service" class="service-section">
+    <h2>Layanan Kami</h2>
+    <div class="service-grid">
+
+      <div class="service-item hidden">
+        <div class="service-icon"><i class="fa-solid fa-laptop"></i></div>
+        <div class="service-title">Jual Komputer/Laptop Bekas</div>
+        <div class="service-desc">
+Kami menyediakan berbagai pilihan komputer atau Laptop bekas
+          berkualitas dengan harga terjangkau.
+        </div>
+      </div>
+
+      <div class="service-item hidden">
+        <div class="service-icon">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+        </div>
+        <div class="service-title">Perbaikan & Upgrade System</div>
+        <div class="service-desc">
+          Layanan servis, perbaikan, dan upgrade hardware/software komputer
+          baik perorangan atau gedung perkantoran.
+        </div>
+      </div>
+     <div class="service-item">
+        <div class="service-icon">
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </div>
+        <div class="service-title">Tukar Tambah</div>
+        <div class="service-desc">
+          Program tukar tambah komputer atau laptop lama Anda dengan produk yang lebih
+          baru.
+        </div>
+      </div>
+
+      <div class="service-item hidden">
+        <div class="service-icon"><i class="fa-solid fa-toolbox"></i></div>
+        <div class="service-title">Jual Beli Sparepart</div>
+        <div class="service-desc">
+          Selain itu Kami juga melayani pembelian sparepart bekas atau baru
+          dari semua komponen laptop dan PC ada disini secara online termasuk
+          pembelian unit laptop dan PC dengan pengiriman ke seluruh wilayah
+          Indonesia dengan aman.
+        </div>
+      </div>
+      
+      <div class="service-item hidden">
+        <div class="service-icon"><i class="fa-solid fa-mobile-retro"></i></div>
+        <div class="service-title">Jual Beli HP bekas</div>
+        <div class="service-desc">
+         Kami siap melayani pembelian dan penjualan hp bekas
+          dari semua merek yang layak pakai dengan tawaran yang sesuai dengan kondisi produk.
+          Kami tidak menjual atau membeli hp bekas yang sudah tidak layak pakai atau mati total
+        </div>
+      </div>
+
+      <div class="service-item hidden">
+        <div class="service-icon"><i class="fa-solid fa-server"></i></div>
+        <div class="service-title">Jual Beli alat-alat jaringan</div>
+        <div class="service-desc">
+Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan dengan kondisi bekas yang
+          masih bisa di gunakan
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Section Tentang layanan Kami End -->
+  
+ 
+<!-- Section Kontak Kami Star -->
+  <section id="kontak" class="kontak-section">
+    <h2>Kontak Kami</h2>
+<!-- Google Maps -->
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5833594145306!2d106.71112199999999!3d-6.186471699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9ce227fc911%3A0xddf13f7fb9595148!2sNani%20Chesia%20Store!5e0!3m2!1sid!2sid!4v1750150786599!5m2!1sid!2sid"
+        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+<!-- Info & Form -->
+    <div class="kontak-content">
+      <!-- Alamat -->
+      <div class="kontak-info">
+        <h3>Alamat Kami</h3>
+        <p><strong>Achan Computer</strong></p>
+        <p>
+          Jl. Petir Utama rt 003 rw 03 No.50, Kel.Petir Kec. Cipondoh<br />Tangerang-Banten
+          15147
+        </p>
+        <p>Telepon: 0812-3456-7890</p>
+        <p>Email: info@achancomputer.com</p>
+      </div>
+      <!-- Form WhatsApp -->
+      <div class="kontak-form">
+        <h3>Hubungi via WhatsApp</h3>
+        <form id="waForm">
+          <input class="inputKontak" type="text" id="namaKontak" placeholder="Nama Anda" required />
+          <input class="inputKontak" type="text" id="teleponKontak" placeholder="Nomor Telepon" required />
+          <textarea class="textare" id="pesanKontak" rows="4" placeholder="Pesan Anda" required></textarea>
+          <button type="submit">Kirim ke WhatsApp</button>
+        </form>
+      
+        <!-- Notifikasi -->
+        <div id="notif" style="display:none; margin-top: 15px; color: green; font-weight: bold;"></div>
+      </div>
+      
+      </div>
+    </div>
+  </section>
+<!--info form End--->
+
+<!-- Section Footer Star-->
+  <footer>
+    <div class="footer-container">
+      <!-- KIRI: Media Sosial -->
+      <div class="footer-section social-icons">
+        <h4>Media Sosial :</h4>
+          
+        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i> &nbsp&nbsp&nbsp&nbspFacebook</a>
+          
+        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i>&nbsp&nbsp&nbspInstagram</a>
+          
+        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i>&nbsp&nbsp&nbspTwitter</a>
+          
+        <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i>&nbsp&nbspYouTube</a>
+      </div>
+
+      <!-- TENGAH: Menu -->
+      <div class="footer-section">
+        <h4>Menu :</h4>
+        <a href="#">Beranda</a>
+        <a href="#about">Tentang Kami</a>
+
+        <a href="#galery">Galery</a>
+        <a href="#service">Layanan</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+        <!-- KANAN: Alamat -->
+      <div class="footer-section alamat">
+        <h4>Kontak :</h4>
+        <img src="img/logo/logo.png" />
+        <p style="font-weight:bold;">Achan Computer</p>
+          <br>
+        <p>
+          Jl. Petir utama no. 50 rt 003 rw 03 Kel. Petir Kec. Cipondoh Kota
+          Tangerang 15147<br />
+          Banten, Indonesia<br />
+          Telp: 0877-8193-5781<br />
+          Email: achancomputer@gmail.com
+        </p>
+      </div>
+    </div>
+  </footer>
+
+ <!-- Section footer credit Star -->
+  <div class="footer-credit">
+    <div class="credit">
+      <p>&copy; 2025 Achan Computer. All rights reserved.</p>
+    </div>
+  </div>
+ <!-- Section footer credit End -->
+
+<!-- User Panel -->
+<div id="userPanelOverlay" class="user-panel-overlay" onclick="toggleUserPanel()"></div>
+<div id="userPanel" class="user-panel">
+  <div class="user-panel-close" onclick="toggleUserPanel()">x</div>
+ <h3 style="text-align:center;">Profil Saya</h3>
+ <!-- Ganti bagian user avatar di user panel -->
+<div class="user-header">
+  <div class="user-avatar-container">
+    <div class="user-avatar" id="userAvatar" onclick="document.getElementById('avatarInput').click()">
+<!-- Foto akan ditampilkan di sini -->
+      <i class="fas fa-user-circle" id="avatarIcon"></i>
+      <div class="avatar-upload-icon">
+        <i class="fas fa-camera"></i>
+      </div>
+    </div>
+    <input type="file" id="avatarInput" accept="image/*" style="display:none;" onchange="uploadAvatar(event)">
+  </div>
+  <div class="user-info">
+    <h4 id="panelUsername"></h4>
+    <p>Pelanggan</p>
+  </div>
+</div>
+  
+<div class="user-detail">
+    <div class="user-detail-item">
+      <label>Username</label>
+      <span id="panelUsernameDetail"></span>
+    </div>
+    <div class="user-detail-item">
+      <label>Password</label>
+      <span id="panelPassword">••••••••</span>
+    </div>
+    <div class="user-detail-item">
+      <label>Status</label>
+      <span style="color:green;">Aktif</span>
+    </div>
+</div>
+<button class="btnCart" onclick="logout()" ><i class="fas fa-sign-out-alt"></i> Logout</button>
+<!-- Tambahkan setelah tombol logout -->
+<button class="fotoProfil" onclick="hapusAvatar()">
+  <i class="fas fa-trash-alt"></i> Hapus Foto Profil
+</button>
+  
+
+<!-- hapus akun -->
+<button class="hapusAkun" onclick="hapusAkun()"><i class="fas fa-trash-alt"></i> Hapus Akun
+</button>
+</div>
+ 
+
+<!-- Modal keranjang -->    
+<div class="modalCart" id="modalCart">
+  <div class="modal-contentCart">
+    <button onclick="document.getElementById('modalCart').style.display='none'" style="float:right;">&times;</button>
+    <h3>Troli Saya</h3>
+<div id="pilihSemuaWrapper" style="margin-bottom:10px; display:none;">
+  <label style="display:flex; align-items:center; gap:4px;">
+    <input type="checkbox" id="checkboxPilihSemua" onchange="toggleSemuaPilihan(this)" />
+    Pilih Semua
+  </label>
+</div>
+
+<div id="daftarKeranjang"></div>
+<p id="keranjangKosong" style="color:red; text-align:center; display:none; font-weight:bold;">Keranjang kosong</p>
+
+<div id="totalTerpilih" class="total-merah"></div>
+    <div class="checkout-form" id="formCheckout">
+      <h4>Form Checkout</h4>
+      <input type="text" id="nama" placeholder="Nama">
+      <input type="number" id="telepon" placeholder="Nomor Telepon">
+      <textarea id="alamat" placeholder="Alamat Pengiriman"></textarea>
+      <button class="btnCart" onclick="checkout()">Checkout sekarang</button>     
+      <button class="btnCart" onclick="checkoutQR()" >Checkout via QR</button>    
+  <div id="qrContainer" style="display:none; text-align:center; margin-top:10px;">
+  <div id="qrWrapper" style="display:none; position:relative; display:inline-block;">
+   <p>scan untuk melanjutkan pembayaran</p>
+    <img id="qrImage" src="" alt="QR Code" style="max-width:200px;" />
+    <a id="downloadQR" href="#" download="qr-code.png"
+     onclick="alert('QR Code berhasil diunduh!')"
+       style="position:absolute; top:60%; left:50%; transform:translate(-50%, -50%);
+              background:rgba(0,0,0,0.6); padding:8px 14px; color:white;
+              border-radius:6px; text-decoration:none;">
+       Download QR
+    </a>
+   
+  </div>
+</div>
+</div>
+</div>
+</div>
+  
+  <!-- Modal Beli Sekarang -->
+<div class="modalCart" id="modalBeli">
+  <div class="modal-contentCart">
+    <button onclick="document.getElementById('modalBeli').style.display='none'" style="float:right;">&times;</button>
+    <h3>Beli Sekarang</h3>
+    <div id="detailBeli"></div>
+    <div class="checkout-form">
+     <h4> Form Checkout </h4>
+      <input type="text" id="namaBeli" placeholder="Nama">
+      <input type="number" id="teleponBeli" placeholder="Nomor Telepon">
+      <textarea id="alamatBeli" placeholder="Alamat Pengiriman"></textarea>
+      <button class="btnSekarang" onclick="prosesBeli()">Beli sekarang</button>
+
+    <button class="btnCart" style="background-color: #ff6600;" onclick="checkoutBeliQR()">Checkout via QR</button>
+    <div id="qrContainerBeli" style="display:none; text-align:center; margin-top:10px;">
+    <div id="qrWrapperBeli" style="display:none; position:relative; display:inline-block;">
+    <p>Scan untuk melanjutkan pembayaran</p>
+    <img id="qrImageBeli" src="" alt="QR Code" style="max-width:200px;" />
+    <a id="downloadQRBeli" href="#" download="qr-code.png"
+       onclick="alert('QR Code berhasil diunduh!')"
+       style="position:absolute; top:60%; left:50%; transform:translate(-50%, -50%);
+              background:rgba(0,0,0,0.6); padding:8px 14px; color:white;
+              border-radius:6px; text-decoration:none;">
+       Download QR
+    </a>
+  </div>
+</div>    
+</div>
+</div>
+</div>
+ 
+<!-- Modal Login -->
+<div class="modalCart" id="modalLogin">
+  <div class="modal-contentCart">
+    <button onclick="document.getElementById('modalLogin').style.display='none'" style="float:right;">&times;</button>
+    <h3>Login</h3>
+    <label for="loginUsername">Username</label>
+    <input type="text" id="loginUsername" placeholder="Username" required />
+    <label for="loginPassword">Password</label>
+    <div style="position:relative;">
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <i class="fa fa-eye" style="position:absolute; right:10px; top:25px; cursor:pointer;" onclick="togglePassword('loginPassword', this)"></i>
+    </div>
+    <button class="btnCartLogin" onclick="login()">Login</button>
+    <p class="daftar" style="text-align:center; margin-top:10px;">Belum punya akun? <a href="javascript:void(0)" onclick="switchToDaftar()">Klik daftar</a></p>
+  <p style="text-align:center; margin-top:10px;"><a href="javascript:void(0)" onclick="tampilkanLupaPassword()" style="font-size:0.9rem;"><p class="lupa"> Lupa Password?</p></a></p>
+</div>
+</div>
+
+
+<!-- Modal Daftar -->
+ <div class="modalCart" id="modalDaftar">
+  <div class="modal-contentCart">
+    <button onclick="document.getElementById('modalDaftar').style.display='none'" style="float:right;">&times;</button>
+    <h3>Daftar</h3>
+    <label for="regUsername">Username</label>
+    <input type="text" id="regUsername" placeholder="Username" required />
+    
+    <label for="regPassword">Password</label>
+    <div style="position:relative;">
+      <input type="password" id="regPassword" placeholder="Password" required />
+      <i class="fa fa-eye" style="position:absolute; right:10px; top:25px; cursor:pointer;" onclick="togglePassword('regPassword', this)"></i>
+    </div>
+
+    <label for="regConfirm">Konfirmasi Password</label>
+    <div style="position:relative;">
+      <input type="password" id="regConfirm" placeholder="Ulangi Password" required />
+      <i class="fa fa-eye" style="position:absolute; right:10px; top:25px; cursor:pointer;" onclick="togglePassword('regConfirm', this)"></i>
+    </div>
+
+    <button class="btnCartDaftar" onclick="daftar()">Daftar</button>
+    <p style="text-align:center; margin-top:10px;">Sudah punya akun? <a href="javascript:void(0)" onclick="switchToLogin()"><p class="login">Login sekarang</p></a></p>
+  </div>
+</div>
+
+<!-- Modal Lupa Password -->
+<div class="modalCart" id="modalLupaPassword">
+  <div class="modal-contentCart">
+    <button onclick="document.getElementById('modalLupaPassword').style.display='none'" style="float:right;">&times;</button>
+    <h3>Reset Password</h3>
+    <label for="resetUsername">Username</label>
+    <input type="text" id="resetUsername" placeholder="Username Anda" required />
+    <label for="newPassword">Password Baru</label>
+    <div style="position:relative;">
+      <input type="password" id="newPassword" placeholder="Password Baru" required />
+      <i class="fa fa-eye" style="position:absolute; right:10px; top:25px; cursor:pointer;" onclick="togglePassword('newPassword', this)"></i>
+    </div>
+    <label for="confirmNewPassword">Konfirmasi Password Baru</label>
+    <div style="position:relative;">
+      <input type="password" id="confirmNewPassword" placeholder="Ulangi Password Baru" required />
+      <i class="fa fa-eye" style="position:absolute; right:10px; top:25px; cursor:pointer;" onclick="togglePassword('confirmNewPassword', this)"></i>
+    </div>
+    <button class="btnCartLogin" onclick="resetPassword()">Reset Password</button>
+    <p class="kembaliKeLogin" style="text-align:center; margin-top:10px;">
+      <a href="javascript:void(0)" onclick="kembaliKeLogin()">Kembali ke Login</a>
+    </p>
+  </div>
+</div>
+  
+  <!-- Modal Kotak pesan -->
+  <div id="overlayMsg" class="overlayMsg">
+    <div id="messageBox" class="message-box">
+      <div id="icon" class="icon">ℹ️</div>
+      <h3 id="messageTitle">Judul</h3>
+      <p id="messageText">Isi pesan</p>
+      <button class="close-btn" onclick="hideMessage()">Tutup</button>
+    </div>
+  </div>
+ 
+ 
+<div id="modalSpesifikasi" class="modalCart" style="z-index: 9999;">
+<div class="modal-contentCart">
+    <button onclick="tutupSpesifikasi()" style="float:right;">&times;</button>
+    <h3>Spesifikasi Produk</h3>
+    <div class="kontenSpesifikasi" id="kontenSpesifikasi"></div>
+  </div>
+</div>
+
+<!--notifikasi keranjang-->
+<div id="notifikasi" class="notifikasi">Produk telah ditambahkan ke keranjang</div>
+
+<!-- Modal QR Code -->
+<div id="modalQR" class="modalCart" style="z-index: 10001;">
+  <div class="modal-contentCart" style="max-width: 350px; text-align: center;">
+    <button onclick="tutupModalQR()" style="float: right; background: none; border: none; font-size: 1.5rem;">&times;</button>
+    <h3>Pembayaran via QR Code</h3>
+    <p>Scan QR code berikut untuk melanjutkan pembayaran</p>
+    <div id="qrCodeContainer" style="margin: 15px 0;">
+      <img id="qrCodeImage" src="" alt="QR Code Pembayaran" style="max-width: 250px;">
+    </div>
+    <a id="downloadQRBtn" href="#" download="qrcode_pembayaran.png" 
+       style="display: inline-block; background: #007bff; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; margin-top: 10px;">
+      <i class="fas fa-download"></i> Download QR Code
+    </a>
+  </div>
+</div>
+
+<!-- Floating WhatsApp Icon -->
+  <a href="https://wa.me/6287781935781" target="_blank" class="wa-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="wa-icon">
+  </a>
+  
+ <script src="Js/script.js"></script>
+ <script src="Js/order.js"></script>
+       
+</body>
+</html>
+    
