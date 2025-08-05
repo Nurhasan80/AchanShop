@@ -347,7 +347,7 @@
 .panel {
   padding: 0 18px;
   display: none;
-  background-color: #f9f9f9;
+  background-color: grey;
   color:#fff;
   overflow: hidden;
   border-left: 3px solid #007bff;
@@ -1405,4 +1405,5 @@ font-weight: bold;
    
   
 }
+
   
