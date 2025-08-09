@@ -877,7 +877,7 @@ footer {
     font-size: 0.7rem;
     font-weight: bold;
     z-index:1000;
-    display: block;
+    display: none;
 }
 
 #keranjang {
@@ -1389,4 +1389,5 @@ h2 {
 
 
     
+
 }
