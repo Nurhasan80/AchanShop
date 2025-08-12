@@ -681,7 +681,7 @@ function tampilkanModal() {
    <div class="warna" style="text-align:center">
           ${warnaHTML}
         </div>
- <button class="lihatDetilCart" a href="javascript:void(0)" onclick="tampilkanSpesifikasi('${id}')" style="color:#007bff; text-decoration:none; padding:2px; margin:10px;">Lihat Detil</button>  
+ <button class="lihatDetilCart" a href="javascript:void(0)" onclick="tampilkanSpesifikasi('${id}')" style="color:#007bff; text-decoration:none; padding:5px; margin:10px;">Lihat Detil</button>  
     
         <div class="produkCart" style="text-align:center;">
           <p><strong>${item.nama}</strong></p>
@@ -1129,4 +1129,5 @@ function checkoutBeliQR() {
   tampilkanModalQR(qrURL);
 
 }
+
 
