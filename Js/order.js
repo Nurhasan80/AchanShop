@@ -690,11 +690,11 @@ function tampilkanModal() {
           <div>
    
    
-            <button onclick="ubahJumlah('${id}', -1)">-</button>
+            <button style="padding:5px 10px" onclick="ubahJumlah('${id}', -1)">-</button>
 
             <span>${item.jumlah}</span>
 
-            <button onclick="ubahJumlah('${id}', 1)">+</button>
+            <button style="padding:5px 10px;" onclick="ubahJumlah('${id}', 1)">+</button>
     
    </div>
           <p class="total-merah">Subtotal: Rp ${subtotal.toLocaleString()}</p>
@@ -920,18 +920,18 @@ function beliSekarang(btn) {
   <div class="produkBeli" style="text-align:center;">
     <p><strong>${nama}</strong></p>
 
-    <button class="lihatDetil" onclick="tampilkanSpesifikasi('${id}')" style="color:#007bff; text-decoration:none; padding:2px; margin:10px;">
+    <button class="lihatDetil" onclick="tampilkanSpesifikasi('${id}')" style="color:#007bff; text-decoration:none; padding:5px; margin:10px;">
       Lihat Detil
     </button>
 
     <p style="margin:5px;"><strong>Harga : Rp ${harga.toLocaleString()}</strong></p>
      
     <div>
-      <button onclick="ubahJumlahBeli(-1)">−</button>
+      <button style="padding:5px;" onclick="ubahJumlahBeli(-1)">−</button>
 
       <span id="jumlahBeli">${produkBeli.jumlah}</span>
 
-      <button onclick="ubahJumlahBeli(1)">+</button>
+      <button style="padding:5px; 10px;" onclick="ubahJumlahBeli(1)">+</button>
     </div>
    
     <p class="total-merah" >Total: <span id="totalBeli">Rp ${harga.toLocaleString()}</span></p>
@@ -1127,4 +1127,5 @@ function checkoutBeliQR() {
 
   // Tampilkan modal QR
   tampilkanModalQR(qrURL);
+
 }
