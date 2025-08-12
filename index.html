@@ -626,7 +626,7 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
 <!-- User Panel -->
 <div id="userPanelOverlay" class="user-panel-overlay" onclick="toggleUserPanel()"></div>
 <div id="userPanel" class="user-panel">
-  <div class="user-panel-close" onclick="toggleUserPanel()">x</div>
+  <div class="user-panel-close" style="color:red;" onclick="toggleUserPanel()">x</div>
  <h3 style="text-align:center;">Profil Saya</h3>
  <!-- Ganti bagian user avatar di user panel -->
 <div class="user-header">
@@ -676,7 +676,7 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
 <!-- Modal keranjang -->    
 <div class="modalCart" id="modalCart">
   <div class="modal-contentCart">
-    <button onclick="document.getElementById('modalCart').style.display='none'" style="float:right;">&times;</button>
+    <button onclick="document.getElementById('modalCart').style.display='none'" style="float:right; padding:5px 10px; ">&times;</button>
     <h3>Troli Saya</h3>
 <div id="pilihSemuaWrapper" style="margin-bottom:10px; display:none;">
   <label style="display:flex; align-items:center; gap:4px;">
@@ -717,7 +717,7 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
   <!-- Modal Beli Sekarang -->
 <div class="modalCart" id="modalBeli">
   <div class="modal-contentCart">
-    <button onclick="document.getElementById('modalBeli').style.display='none'" style="float:right;">&times;</button>
+    <button onclick="document.getElementById('modalBeli').style.display='none'" style="float:right; padding:5px 10px;">&times;</button>
     <h3>Beli Sekarang</h3>
     <div id="detailBeli"></div>
     <div class="checkout-form">
@@ -748,7 +748,7 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
 <!-- Modal Login -->
 <div class="modalCart" id="modalLogin">
   <div class="modal-contentCart">
-    <button onclick="document.getElementById('modalLogin').style.display='none'" style="float:right;">&times;</button>
+    <button onclick="document.getElementById('modalLogin').style.display='none'" style="float:right; padding:5px 10px;">&times;</button>
     <h3>Login</h3>
     <label for="loginUsername">Username</label>
     <input type="text" id="loginUsername" placeholder="Username" required />
@@ -767,7 +767,7 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
 <!-- Modal Daftar -->
  <div class="modalCart" id="modalDaftar">
   <div class="modal-contentCart">
-    <button onclick="document.getElementById('modalDaftar').style.display='none'" style="float:right;">&times;</button>
+    <button onclick="document.getElementById('modalDaftar').style.display='none'" style="float:right; padding:5px 10px;">&times;</button>
     <h3>Daftar</h3>
     <label for="regUsername">Username</label>
     <input type="text" id="regUsername" placeholder="Username" required />
@@ -792,7 +792,7 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
 <!-- Modal Lupa Password -->
 <div class="modalCart" id="modalLupaPassword">
   <div class="modal-contentCart">
-    <button onclick="document.getElementById('modalLupaPassword').style.display='none'" style="float:right;">&times;</button>
+    <button onclick="document.getElementById('modalLupaPassword').style.display='none'" style="float:right; padding:5px 10px;">&times;</button>
     <h3>Reset Password</h3>
     <label for="resetUsername">Username</label>
     <input type="text" id="resetUsername" placeholder="Username Anda" required />
@@ -826,7 +826,7 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
  
 <div id="modalSpesifikasi" class="modalCart" style="z-index: 9999;">
 <div class="modal-contentCart">
-    <button onclick="tutupSpesifikasi()" style="float:right;">&times;</button>
+    <button onclick="tutupSpesifikasi()" style="float:right; padding:5px 10px;">&times;</button>
     <h3>Spesifikasi Produk</h3>
     <div class="kontenSpesifikasi" id="kontenSpesifikasi"></div>
   </div>
