@@ -690,7 +690,7 @@ function tampilkanModal() {
           <div>
    
    
-            <button style="padding:5px 10px" onclick="ubahJumlah('${id}', -1)">-</button>
+            <button style="padding:5px 10px;" onclick="ubahJumlah('${id}', -1)">-</button>
 
             <span>${item.jumlah}</span>
 
@@ -927,11 +927,11 @@ function beliSekarang(btn) {
     <p style="margin:5px;"><strong>Harga : Rp ${harga.toLocaleString()}</strong></p>
      
     <div>
-      <button style="padding:5px;" onclick="ubahJumlahBeli(-1)">−</button>
+      <button style="padding:5px 10px;" onclick="ubahJumlahBeli(-1)">−</button>
 
       <span id="jumlahBeli">${produkBeli.jumlah}</span>
 
-      <button style="padding:5px; 10px;" onclick="ubahJumlahBeli(1)">+</button>
+      <button style="padding:5px 10px;" onclick="ubahJumlahBeli(1)">+</button>
     </div>
    
     <p class="total-merah" >Total: <span id="totalBeli">Rp ${harga.toLocaleString()}</span></p>
@@ -1129,3 +1129,4 @@ function checkoutBeliQR() {
   tampilkanModalQR(qrURL);
 
 }
+
