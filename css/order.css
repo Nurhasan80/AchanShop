@@ -1,0 +1,1365 @@
+/*section order pc &laptop Star*/
+.order-pc {
+
+    
+}
+
+.order-pc h2 {
+  text-align: center;
+  margin: 10rem 0 2rem 0;
+}
+
+.order-pc h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(to right, #e60000, #ff8000);
+  margin: 6px auto 0;
+  color: #e91e63;
+}
+
+#order-pc {
+  scroll-margin-top: 20px;
+}
+
+/*section order pc &laptop End*/
+
+/*section order spatepart Star*/
+.order-sparepart {}
+
+.order-sparepart h2 {
+  text-align: center;
+  margin: 10rem 0 2rem 0;
+}
+
+.order-sparepart h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(to right, #e60000, #ff8000);
+  margin: 6px auto 0;
+  color: #e91e63;
+}
+
+#order-sparepart {
+  scroll-margin-top: 20px;
+}
+
+/*section order pc &laptop End*/
+
+/* produk */
+.produk { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 1rem; 
+  padding:2px; 
+  justify-content: center; 
+}
+  
+.produk-item { 
+  border: 1px solid #ccc; 
+  padding: 1rem; 
+  width: 300px; 
+  border-radius: 8px; 
+  background: #fff; 
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.1); 
+}
+  
+.produk-item img { 
+  width: 100%; 
+  border-radius: 5px; 
+  }
+  
+.product-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+  gap: 5px; 
+  max-width: 1200px; 
+  margin: 0 auto;
+    
+}
+  
+.product-grid {
+  grid-template-columns: repeat(3, 1fr); gap: 5px;
+}
+   
+.gambar-wrapper { 
+  position: relative;
+  width: 100%; 
+}
+  
+.label-wrapper { 
+  position: absolute; 
+  bottom: 8px; 
+  left: 8px;
+  display: flex; 
+  flex-direction: row; /* label sejajar kiri-kanan */ 
+  gap: 6px; /* spasi antar label, kecil agar terlihat berdempetan */
+}
+  
+/* Gaya Umum Label */
+.label { 
+  padding: 4px 8px;
+  font-size: 14px; 
+  font-weight: bold; 
+  color: white; 
+  border-radius: 4px; 
+  text-align: center; 
+  white-space: nowrap; 
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+  
+/* Warna Label Khusus */
+.label.ongkir { 
+  background-color: green; 
+}
+
+.label.diskon { 
+  background-color: red; 
+}
+
+.produk-item h4, .produk-item p {
+  text-align:center;
+}
+
+.produk-item h4, .produk-item p {
+  border-radius: 5px;
+}
+
+.deskripsi {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+  
+.btn-container { 
+  text-align: center; 
+  margin-top: 10px; 
+}
+
+.btn-cart, .btn-beli { 
+  padding: 0.5rem 1rem; 
+  border: none; 
+  color: #fff; 
+  cursor: pointer; 
+  margin: 5px; 
+  border-radius: 4px; 
+  
+}
+
+.btn-cart { 
+  background-color: #ff0099;
+} 
+
+.btn-beli {
+  background-color: #ff6600; 
+}
+/* end produk */
+
+.modalCart { 
+  display: none; 
+  position: fixed; 
+  inset: 0; 
+  background-color: rgba(0,0,0,0.5); 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 999; 
+}
+
+.modal-contentCart { 
+  background: #fff; 
+  padding: 1rem; 
+  width: 35%; 
+  max-width: 700px; 
+  border-radius: 8px; 
+  max-height: 90vh; 
+  overflow-y: auto; 
+}
+
+.modal-contentCart h3 { 
+  text-align:center; 
+  font-weight:bold;
+}
+
+.cart-item { 
+  display: flex; 
+  gap: 1rem; 
+  margin-bottom: 1rem; 
+  border-bottom: 1px solid #ddd; 
+  padding-bottom: 1rem; 
+  align-items: center; 
+}
+
+.cart-item img { 
+  width: 100px; 
+  height: 100px; 
+  object-fit: cover; 
+  border-radius: 5px; 
+}
+
+.thumbnail-wrapper { 
+  display: flex; 
+  justify-content: 
+  center; gap: 5px; 
+  margin-top: 10px; 
+}
+
+.thumbnail-wrapper div { 
+  text-align: center; 
+  cursor: pointer; 
+  font-size: 0.8rem; 
+}
+
+.thumbnail-wrapper div div {
+  border: none !important;
+}
+
+.thumbnail-wrapper img { 
+  width: 30px; 
+  height: 30px; 
+  border-radius: 4px; 
+  border: 2px solid #ccc;
+}
+
+.selected-thumbnail {
+  border: 1px solid red !important; 
+}
+
+.harga-coret { 
+  text-decoration: line-through; 
+  color: #888; 
+  margin-right: 5px; 
+  font-size: 12px; 
+}
+
+.checkout-form input, .checkout-form textarea { 
+  width: 100%; 
+  margin: 5px 0; 
+  padding: 8px; 
+  border-radius: 4px; 
+  border: 1px solid #ccc; 
+}
+
+.checkout-form .btnCart, .checkout-form .btnSekarang { 
+  width: 100%; 
+  background: #ff0099; 
+  color: white; 
+  padding: 10px; 
+  border: none; 
+  border-radius: 5px; 
+  margin-top: 10px; 
+  cursor: pointer;
+}
+
+.checkout-form h4 { 
+  text-align:center;
+  margin-top: 20px;
+}
+
+.total-merah { 
+  color: red; 
+  font-weight: bold; 
+  margin-top: 10px;
+  text-align: center; 
+}
+
+.btnSekarang {
+  background:#ff6600  !important;
+  
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Khusus untuk gambar utama di keranjang */
+#daftarKeranjang img[id^="gambarUtama-"] {
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+  
+.notifikasi {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  font-size: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+.notifikasi.tampil {
+  opacity: 0.8;
+}
+
+.tombol-1 {
+  border:1px solid #cccccc;
+  padding:4px 0 4px 0;
+  width:50%;
+  margin-left:80px
+  text-align:center;
+  border-radius:5px;
+}
+ 
+.tombol-2 {
+  border:1px solid #cccccc;
+  padding:4px 0 4px 0;
+  width:50%;
+  margin-left:80px;
+  text-align:center;
+  border-radius:5px;
+} 
+   
+.accordion {
+  background-color: #eee;
+  color: #333;
+  cursor: pointer;
+  padding: 12px 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.accordion.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: grey;
+  color:#fff;
+  overflow: hidden;
+  border-left: 3px solid #007bff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.accordion::after {
+  font-family: 'Font Awesome 6 Free';
+  content: '\f078'; /* fa-chevron-down */
+  font-weight: 900;
+  float: right;
+  transition: transform 0.3s;
+}
+
+.accordion.active::after {
+  content: '\f077'; /* fa-chevron-up */
+}
+  
+/*pengaturan form modalCart login*/
+.modal-contentCart input[type="text"],
+.modal-contentCart input[type="password"],
+.modal-contentCart input[type="number"] {
+  width: 100%;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+  
+.modal-contentCart .btnCartLogin, .btnCartDaftar {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+  
+.modal-contentCart .btnCartLogin:hover, .modal-contentCart .btnCartDaftar:hover {
+  background-color: #0056b3;
+}
+
+.modal-contentCart h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.modal-contentCart label {
+  font-weight: bold;
+  margin-top: 8px;
+  display: block;
+  color: #555;
+}
+
+.auth-bar-avatar {
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 1.8rem;
+  color: #555;
+  transition: color 0.2s;
+  vertical-align: middle;
+}
+
+.auth-bar-avatar:hover {
+  color: #007bff;
+}
+  
+.auth-bar-avatar img {
+  margin-top: 5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007bff;
+}
+
+/* Tambahkan di bagian CSS */
+.produk-item.stok-habis {
+  position: relative;
+  opacity: 0.8;
+}
+
+.produk-item.stok-habis img {
+  filter: grayscale(100%);
+}
+
+.produk-item.stok-habis::after {
+  content: "STOK HABIS";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.produk-item.stok-habis .btn-cart,
+.produk-item.stok-habis .btn-beli {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+  
+/* Panel Profil User */
+.user-panel {
+  position: fixed;
+  top: 0;
+  left: -700px;
+  width: 30%;
+  height: 100%;
+  box-shadow: 0 -4px 20px 20px rgba(0, 0, 0, 0.5);
+  background-color:#fff;
+  z-index: 1000;
+  transition: left 0.3s ease;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+#welcomeText {
+  cursor: pointer;
+}
+
+.user-panel.open {
+  left: 0;
+}
+
+.user-panel-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  display: none;
+  
+}
+
+.user-panel-overlay.open {
+  display: block;
+}
+
+/* Avatar Styles */
+.user-avatar-container {
+  position: relative;
+  margin-right: 15px;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #007bff;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#avatarIcon {
+  font-size: 3rem;
+  color: #888;
+}
+
+.avatar-upload-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #007bff;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  border: 2px solid white;
+}
+  
+.user-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.user-info h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.user-info p {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.user-detail {
+  margin-bottom: 20px;
+}
+
+.user-detail-item {
+  margin-bottom: 10px;
+}
+
+.user-detail-item label {
+  display: block;
+  font-weight: bold;
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 3px;
+}
+
+.user-detail-item span {
+  display: block;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+.username-edit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px;
+  border-radius: 5px;
+  background-color:#f9f9f9; ;
+  flex: 1;
+  border: 2px solid rgb(143, 143, 143);
+}
+
+.username-edit input {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #f9f9f9;
+}
+
+.username-edit input:disabled {
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  color: #333;
+  cursor: default;
+}
+
+.username-edit button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.username-edit button:hover {
+  color: #007bff;
+}
+
+.user-panel-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #888;
+}
+
+.user-panel-close:hover {
+  color: #333;
+}
+
+.btnCart, .fotoProfil, .hapusAkun {
+  cursor: pointer;
+}
+  
+/* Profil icon di auth bar */
+.profile-icon {
+  margin-right: 10px;
+  cursor: pointer;
+  color: #555;
+  font-size: 1.8rem;
+  transition: color 0.2s;
+}
+  
+.profile-icon:hover {
+  color: #007bff;
+}
+  
+#gambarBeli {
+  width:400px;
+  height: 200px;
+}
+
+/* kotak messagebox */
+  
+.overlayMsg {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.message-box {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 350px;
+  width: 50%;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.message-box .icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.message-box h3 {
+  margin: 10px 0 5px;
+}
+
+.message-box p {
+  margin: 0 0 15px;
+}
+
+.close-btn {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #222;
+}
+
+/* Tipe pesan */
+.success { color: #28a745; }
+.error { color: #dc3545; }
+.warning { color: #ffc107; }
+.info { color: #007bff; }
+
+/* tombol area modal profile */
+.btnCart {
+  width:100%; 
+  margin-top:20px; 
+  padding:10px;
+
+}
+
+.fotoProfil {
+  background:#6c757d; 
+  color:white; 
+  padding:8px 16px; 
+  border:none; 
+  border-radius:4px; 
+  margin-top:10px; 
+  width:100%;"
+}
+
+.hapusAkun {
+  background:#dc3545; 
+  color:white; 
+  padding:8px 16px; 
+  border:none; 
+  border-radius:4px; 
+  margin-top:10px; 
+  width:100%;
+}
+
+#welcomeText {
+  margin-right:10px; 
+  font-size:18px;
+
+}
+
+
+/* notifikasi tutup toko */ 
+  
+@media (min-width: 1024px) {
+  
+.produk-item {
+  width: 100%;
+}
+
+.product-grid {
+  grid-template-columns: repeat(3, 1fr); 
+  gap:10px;
+}
+
+.avatar-upload-icon {
+  width: 20px;
+  height: 20px;
+  
+}
+
+
+  
+}
+  
+  
+/* Responsive Layout - Tablet */
+@media (max-width: 992px) {
+  
+.produk-item {
+  width: 45%;
+}
+    
+.modal-contentCart {
+  width: 100%;
+}
+    
+#daftarKeranjang img[id^="gambarUtama-"] {
+  max-width: 250px;
+}
+    
+.user-panel {
+  width: 40%;
+  height: 100%;
+}
+
+.produk-item { 
+  border: 1px solid #ccc; 
+  padding: 0.5rem; 
+  width: 250px; 
+  border-radius: 8px; 
+  background: #fff; 
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.1); 
+}
+
+.product-grid {
+  grid-template-columns: repeat(3, 1fr); gap: 5px;
+}
+
+.modal-contentCart {
+  width: 50%;
+  padding: 0.8rem;
+}
+
+#gambarBeli {
+  width:350px;
+  height: 150px;
+}
+
+.user-panel h3 {
+  font-size: 16px;
+  text-align: center;
+
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+}
+
+.user-info h4, .user-info p {
+  font-size: 12px;
+
+}
+
+.avatar-upload-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+}
+
+  
+}
+
+/* Responsive Layout - Mobile Landscape */
+@media (max-width: 768px) {
+  
+.produk-item {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.product-grid {
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 5px;
+}
+    
+.modal-contentCart {
+  width: 60%;
+  padding: 0.8rem;
+}
+
+.modal-contentCart label {
+  font-size: 12px;
+}
+    
+.cart-item {
+  flex-direction: column;
+  align-items: flex-start;
+}
+    
+.thumbnail-wrapper {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-cart, .btn-beli {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+#welcomeText, #btnLogin, #btnDaftar {
+  font-size: 16px;
+}
+
+.keranjang i {
+  font-size: 20px;
+}
+
+
+.label { 
+  padding: 2px 4px;
+  font-size: 12px; 
+  font-weight: bold; 
+  color: white; 
+  border-radius: 4px; 
+  text-align: center; 
+  white-space: nowrap; 
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+    
+.gambar-wrapper { 
+  position: relative;
+  width: 100%; 
+}
+
+.label-wrapper { 
+  position: absolute; 
+  bottom: 8px; 
+  left: 4px;
+  display: flex; 
+  flex-direction: row; /* label sejajar kiri-kanan */ 
+  gap: 6px; /* spasi antar label, kecil agar terlihat berdempetan */
+}
+
+.produk-item.stok-habis::after {
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.5rem;
+}
+
+
+#gambarBeli {
+  width:300px;
+  height: 150px;
+}
+
+.produkBeli {
+  font-size: 14px;
+}
+
+.textThumbnail {
+  font-size:11px;
+  margin-bottom: 5px;
+
+}
+ 
+.user-panel {
+  width: 60%;
+  height: 100%;
+}
+
+.user-panel h3 {
+  font-size: 16px;
+  text-align: center;
+
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+}
+
+.user-info h4, .user-info p {
+  font-size: 12px;
+
+}
+
+.avatar-upload-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+}
+
+    
+}
+  
+/* Responsive Layout - Mobile Portrait */
+  @media (max-width: 576px) {
+
+.produk-item h4 {
+  font-size: 1rem;
+}
+
+.deskripsi {
+  font-size: 0.8rem;
+}
+
+.modal-contentCart {
+  width: 70%;
+  max-height: 85vh;
+}
+
+.modal-contentCart label {
+  font-size: 10px;
+}
+
+.modal-contentCart label {
+  font-size: 12px;
+}
+
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form button {
+  font-size: 0.9rem;
+  padding: 8px;
+}
+
+#qrImage {
+  max-width: 180px;
+}
+
+.notifikasi {
+  width: 90%;
+  font-size: 0.9rem;
+  padding: 10px;
+}
+
+.accordion {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+}
+
+.panel {
+  padding: 0 15px;
+}
+
+.user-panel {
+  width: 80%;
+  height: 100%;
+}
+
+.user-panel h3 {
+  font-size: 16px;
+  text-align: center;
+
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+}
+
+.user-info h4, .user-info p {
+  font-size: 12px;
+
+}
+
+/* label dsikon*/
+.label { 
+  padding: 2px 4px;
+  font-size: 12px; 
+  font-weight: bold; 
+  color: white; 
+  border-radius: 4px; 
+  text-align: center; 
+  white-space: nowrap; 
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+        
+.gambar-wrapper { 
+  position: relative;
+  width: 100%; 
+}
+
+.label-wrapper { 
+  position: absolute; 
+  bottom: 7px; left: 2px;
+  display: flex; 
+  flex-direction: row; /* label sejajar kiri-kanan */ 
+  gap: 6px; /* spasi antar label, kecil agar terlihat berdempetan */
+}
+
+.produk-item.stok-habis::after {
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.5rem;
+}
+
+
+#gambarBeli {
+  width:300px;
+  height: 150px;
+}
+
+.avatar-upload-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+}
+
+
+    
+}
+  
+/* Orientasi landscape */
+@media (max-height: 500px) and (orientation: landscape) {
+  
+.modal-contentCart {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-contentCart label {
+  font-size: 10px;
+}
+
+.btn-cart, .btn-beli { 
+  padding: 0.5rem 0.5rem; 
+  border: none; 
+  color: #fff; 
+  cursor: pointer; 
+  margin: 5px; 
+  font-size: 12px;
+  border-radius: 4px; 
+}
+
+.user-panel {
+  width: 85%;
+  height: 100%;
+}
+
+.produk-item.stok-habis::after {
+  padding: 5px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 9px;
+}
+  
+
+  
+
+}
+    
+/* Responsive untuk layar sangat kecil */
+@media (max-width: 400px) {
+
+.order-pc h2::after, 
+.order-sparepart h2::after
+{
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(to right, #e60000, #ff8000);
+  margin: 6px auto 0;
+  color: #e91e63;
+
+}
+  
+.produk-item {
+  padding: 0.8rem;
+}
+
+.product-grid {
+  grid-template-columns: repeat(2, 1fr); gap: 5px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-cart, .btn-beli {
+  width: 100%;
+  margin: 3px 0;
+  
+}
+
+.modal-contentCart h3 {
+  font-size: 1.2rem;
+}
+
+#daftarKeranjang img[id^="gambarUtama-"] {
+  max-width: 150px;
+}
+
+
+.thumbnail-wrapper img {
+  width: 25px;
+  height: 25px;
+}
+
+.user-panel {
+  width: 85%;
+  height: 150%;
+}
+
+.notifikasi {
+  padding: 8px 12px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.btn-cart, .btn-beli { 
+  padding: 0.5rem 0.5rem; 
+  border: none; 
+  color: #fff; 
+  cursor: pointer; 
+  margin: 5px; 
+  font-size: 12px;
+  border-radius: 4px; 
+}
+
+.produk-item.stok-habis::after {
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.4rem;
+}
+
+.label { 
+  padding: 2px 4px;
+  font-size: 6px; 
+  font-weight: bold; 
+  color: white; 
+  border-radius: 4px; 
+  text-align: center; 
+  white-space: nowrap; 
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+#gambarBeli {
+  width:200px;
+  height: 100px;
+}
+.modalCart h3, h4 {
+  font-size: 12px;
+}
+
+.textThumbnail {
+  font-size:11px;
+
+}
+
+.produkBeli {
+  font-size: 12px;
+}
+
+.produkCart {
+  font-size: 12px;
+
+}
+
+.checkout-form input, .checkout-form textarea { 
+  width: 100%; 
+  margin: 3px 0; 
+  padding: 8px;
+  font-size: 12px; 
+  border-radius: 4px; 
+  border: 1px solid #ccc; 
+}
+
+.lihatDetil {
+  font-size: 10px;
+}
+
+.lihatDetilCart {
+  font-size: 12px;
+}
+
+.user-detail {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.user-detail label {
+  font-size: 12px;
+}
+
+
+.user-info p {
+  font-size: 10px;
+}
+
+.user-panel h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+
+}
+
+.fotoProfil {
+  padding: 10px 16px;
+}
+
+.fotoProfil i {
+  font-size: 11px;
+}
+
+.avatar-upload-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.user-avatar {
+  width: 70px;
+  height: 70px;
+}
+
+/* tombol area modal profile */
+.btnCart {
+  width:100%; 
+  margin-top:20px; 
+  padding:5px;
+  font-size: 11px;
+
+}
+
+.fotoProfil {
+  background:#6c757d; 
+  color:white; 
+  padding:8px 8px;
+  font-size: 11px; 
+  border:none; 
+  border-radius:4px; 
+  margin-top:10px; 
+  width:100%;
+}
+
+.hapusAkun {
+  background:#dc3545; 
+  color:white; 
+  padding:8px 8px;
+  font-size: 11px; 
+  border:none; 
+  border-radius:4px; 
+  margin-top:10px; 
+  width:100%;
+}
+
+.user-panel-close {
+font-size: 14px;
+font-weight: bold;
+}
+
+#welcomeText {
+  margin-right:10px; 
+  font-size:14px;"
+
+}
+
+   
+  
+}
+  
