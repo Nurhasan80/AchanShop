@@ -1021,6 +1021,13 @@ footer {
     position: relative;
 }
 
+    .has-submenu ul.submenu {
+    display: none;
+  }
+  .has-submenu.open ul.submenu {
+    display: block;
+  }
+
 .auth-buttons {
     display: block;
     padding: 5px;
@@ -1340,4 +1347,5 @@ h2 {
 
 
     
+
 }
