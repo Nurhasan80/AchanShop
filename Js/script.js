@@ -21,6 +21,27 @@ const menuToggle = document.getElementById('menu-toggle');
     e.stopPropagation();
   });
 
+// Tutup menu otomatis saat klik link (kecuali link bercabang)
+const menuLinks = document.querySelectorAll('#menu a');
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    const parentLi = link.parentElement;
+
+    if (parentLi.classList.contains('has-submenu')) {
+      // Kalau parent adalah "has-submenu", jangan langsung tutup menu
+      // Biar submenu bisa dibuka/tutup
+      e.preventDefault(); 
+      parentLi.classList.toggle('open'); 
+    } else {
+      // Kalau link biasa -> tutup menu
+      menu.classList.remove('show');
+      menuToggle.classList.remove('active');
+    }
+  });
+});
+
+
 
 //foto galery
   const galleryItems = document.querySelectorAll('.gallery-item');
