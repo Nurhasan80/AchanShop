@@ -1,5 +1,17 @@
 
 let keranjang = {};
+function simpanKeranjang() {
+  localStorage.setItem("keranjang", JSON.stringify(keranjang));
+}
+// Cek apakah ada keranjang tersimpan di localStorage
+const keranjangTersimpan = localStorage.getItem("keranjang");
+if (keranjangTersimpan) {
+  keranjang = JSON.parse(keranjangTersimpan);
+}
+// 🔥 Update badge saat halaman dimuat
+updateBadge();
+
+
 let dataThumbnail = {
   //apple machbook
   1: [
@@ -480,7 +492,7 @@ function login() {
 function logout() {
   if (confirm("Apakah Anda yakin ingin keluar dari akun Anda?")) {
     localStorage.removeItem("loginUser");
-    keranjang = {}; // Kosongkan keranjang
+    // keranjang = {}; // Kosongkan keranjang
     updateBadge();
 
     // Tutup panel user
@@ -927,10 +939,12 @@ function tambahKeKeranjang(btn) {
   if (keranjang[id].jumlah < stok) {
     keranjang[id].jumlah++;
     tampilkanNotifikasi();
+    simpanKeranjang(); // 🔥 simpan setelah update
   } else {
     showMessage("Peringatan", "Jumlah melebihi stok!", "warning");
   }
   updateBadge();
+  
 }
 
 function updateBadge() {
@@ -1073,7 +1087,9 @@ function ubahJumlah(id, delta) {
   }
   tampilkanModal();
   updateBadge();
+  simpanKeranjang(); // 🔥 simpan setelah perubahan
 }
+
 
 function gantiThumbnail(id, gambar, warna) {
   document.getElementById(`gambarUtama-${id}`).src = gambar;
@@ -1140,10 +1156,12 @@ function checkout() {
   const url = `https://wa.me/6287781935781?text=${encodeURIComponent(pesan)}`;
   window.open(url, "_blank");
 
-  // Hapus item yang sudah dipilih dari keranjang
-  itemsToRemove.forEach((id) => {
-    delete keranjang[id];
-  });
+// Hapus item yang sudah dipilih dari keranjang
+itemsToRemove.forEach((id) => {
+  delete keranjang[id];
+});
+simpanKeranjang(); // 🔥 simpan setelah checkout
+
 
   // Kosongkan formulir
   document.getElementById("nama").value = "";
