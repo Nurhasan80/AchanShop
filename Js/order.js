@@ -1408,10 +1408,11 @@ function cekJamToko() {
     tombolKeranjang.forEach((btn) => (btn.disabled = false));
     if (tombolCheckout) tombolCheckout.disabled = false;
 
-    // aktifkan icon keranjang
+    // aktifkan kembali icon keranjang
     if (iconKeranjang) {
-      iconKeranjang.style.pointerEvents = "auto";
       iconKeranjang.style.opacity = "1";
+      // Hapus handler "tutup" agar fungsi asli kembali jalan
+      iconKeranjang.onclick = null;
     }
   } else {
     if (notifikasi) notifikasi.style.display = "block";
@@ -1420,17 +1421,27 @@ function cekJamToko() {
     tombolKeranjang.forEach((btn) => (btn.disabled = true));
     if (tombolCheckout) tombolCheckout.disabled = true;
 
-    // nonaktifkan icon keranjang
     if (iconKeranjang) {
-      iconKeranjang.style.pointerEvents = "none"; // tidak bisa diklik
-      iconKeranjang.style.opacity = "0.5"; // abu-abu
+      iconKeranjang.style.opacity = "0.5";
+
+      // 🔹 Intercept klik icon keranjang
+      iconKeranjang.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation(); // cegah modal tetap terbuka
+        if (typeof showMessage === "function") {
+          showMessage("Info", "Toko sedang tutup, silakan kembali besok.", "info");
+        } else {
+          alert("Toko sedang tutup, silakan kembali besok.");
+        }
+      };
     }
   }
 }
 
 window.onload = cekJamToko;
 setInterval(cekJamToko, 60000); // cek setiap 60 detik
-
+                          
+const bukaNonStop = false; // Ganti true jika ingin buka 24 jam
 function checkoutQR() {
   const nama = document.getElementById('nama').value.trim();
   const telepon = document.getElementById('telepon').value.trim();
@@ -1514,6 +1525,7 @@ function checkoutBeliQR() {
   // Tampilkan modal QR
   tampilkanModalQR(qrURL);
 }
+
 
 
 
