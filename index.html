@@ -670,27 +670,27 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
 </div>
   <div class="user-detail-item">
   <label>Alamat</label>
-  <div class="alamat-edit" style="position: relative; width: 100%;">
+  <div class="alamat-edit" style="position: relative; width: 100%; border-radius: 5px;">
     <textarea id="editAlamatInput" disabled
               style="width: 100%; min-height: 60px; max-height: 120px;
-                     padding-right: 40px; resize: vertical; overflow-y:scroll;"></textarea>
+                     padding-right: 40px; resize: vertical; overflow-y:auto;"></textarea>
     
     <!-- Tombol Edit -->
     <button id="btnEditAlamat" onclick="enableEditAlamat()" 
-            style="position: absolute; right: 20px; top: 8px;
-                   background: none; border: none; cursor: pointer; color: rgb(89, 88, 88);;">
+            style="position: absolute; right: 5px; top: 8px;
+                   background: none; border: none; cursor: pointer; color: rgb(89, 88, 88);">
       <i class="fas fa-edit"></i>
     </button>
 
     <!-- Tombol Save -->
     <button id="btnSaveAlamat" onclick="saveEditedAlamat()" style="display:none;
-            position: absolute; right: 20px; top: 8px;
-            background: none; border: none; cursor: pointer;">
+            position: absolute; right: 5px; top: 8px;
+            background: none; border: none; cursor: pointer; color:rgb(89, 88, 88);">
       <i class="fas fa-save"></i>
     </button>
   </div>
 </div>
-
+  
     <div class="user-detail-item">
       <label>Password</label>
       <span id="panelPassword">••••••••</span>
