@@ -271,7 +271,8 @@ body {
 .dark-mode .panel,
 .dark-mode .produk-item h4,
 .dark-mode .produk-item p,
-.dark-mode .username-edit {
+.dark-mode .username-edit,
+.dark-mode .alamat-edit #editAlamatInput {
     background-color: #022633;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
     
@@ -1349,3 +1350,4 @@ h2 {
     
 
 }
+
