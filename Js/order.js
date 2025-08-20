@@ -655,6 +655,43 @@ function saveEditedUsername() {
   document.getElementById("btnSaveUsername").style.display = "none";
 }
 
+function enableEditAlamat() {
+  const input = document.getElementById("editAlamatInput");
+  input.disabled = false;
+  input.focus();
+  document.getElementById("btnEditAlamat").style.display = "none";
+  document.getElementById("btnSaveAlamat").style.display = "inline-block";
+}
+
+function saveEditedAlamat() {
+  const newAlamat = document.getElementById("editAlamatInput").value.trim();
+  const username = localStorage.getItem("loginUser");
+  if (!username) return;
+
+  if (!newAlamat) {
+    showMessage("Info", "Alamat tidak boleh kosong!", "info");
+    return;
+  }
+
+  let users = JSON.parse(localStorage.getItem("users") || "{}");
+  if (users[username]) {
+    if (typeof users[username] === "object") {
+      users[username].alamat = newAlamat;
+    } else {
+      // format lama
+      users[username] = { password: users[username], whatsapp: "-", alamat: newAlamat };
+    }
+    localStorage.setItem("users", JSON.stringify(users));
+  }
+
+  showMessage("Sukses", "Alamat berhasil diperbarui!", "success");
+
+  document.getElementById("editAlamatInput").disabled = true;
+  document.getElementById("btnEditAlamat").style.display = "inline-block";
+  document.getElementById("btnSaveAlamat").style.display = "none";
+}
+
+
 
 function updateAuthStatus() {
   let user = localStorage.getItem("loginUser");
@@ -701,6 +738,15 @@ function updateAuthStatus() {
         const wa = document.getElementById("panelWhatsApp");
         if (wa) wa.innerText = "-";
       }
+
+          if (users[user] && users[user].alamat) {
+      const alamatInput = document.getElementById("editAlamatInput");
+      if (alamatInput) alamatInput.value = users[user].alamat;
+    } else {
+      const alamatInput = document.getElementById("editAlamatInput");
+      if (alamatInput) alamatInput.value = "";
+    }
+
     
       displayAvatar();
     }
@@ -1453,3 +1499,4 @@ function checkoutBeliQR() {
   // Tampilkan modal QR
   tampilkanModalQR(qrURL);
 }
+
