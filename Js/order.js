@@ -1441,7 +1441,7 @@ function cekJamToko() {
 window.onload = cekJamToko;
 setInterval(cekJamToko, 60000); // cek setiap 60 detik
                           
-const bukaNonStop = false; // Ganti true jika ingin buka 24 jam
+
 function checkoutQR() {
   const nama = document.getElementById('nama').value.trim();
   const telepon = document.getElementById('telepon').value.trim();
@@ -1525,6 +1525,7 @@ function checkoutBeliQR() {
   // Tampilkan modal QR
   tampilkanModalQR(qrURL);
 }
+
 
 
 
