@@ -1399,7 +1399,7 @@ function cekJamToko() {
   const tombolBeli = document.querySelectorAll(".btn-beli");
   const tombolKeranjang = document.querySelectorAll(".btn-cart");
   const tombolCheckout = document.getElementById("btnCart");
-const iconKeranjang = document.querySelectorAll(".keranjang")
+const iconKeranjang = document.querySelectorAll(".keranjang");
   if (buka) {
     if (notifikasi) notifikasi.style.display = "none";
     tombolBeli.forEach((btn) => (btn.disabled = false));
@@ -1501,5 +1501,6 @@ function checkoutBeliQR() {
   // Tampilkan modal QR
   tampilkanModalQR(qrURL);
 }
+
 
 
