@@ -1385,62 +1385,38 @@ function prosesBeli() {
   }, 3000);
 }
 
-const bukaNonStop = false; // Ganti true jika ingin buka 24 jam
+ const bukaNonStop = false; // Ganti true jika ingin buka 24 jam
 const jamBuka = 7; // 07.00
 const jamTutup = 21; // 21.00
 
 function cekJamToko() {
-  const sekarang = new Date();
-  const jam = sekarang.getHours();
+  const sekarang = new Date();
+  const jam = sekarang.getHours();
 
-  const buka = bukaNonStop || (jam >= jamBuka && jam < jamTutup);
+  const buka = bukaNonStop || (jam >= jamBuka && jam < jamTutup);
 
-  const notifikasi = document.getElementById("notifikasiToko");
-  const tombolBeli = document.querySelectorAll(".btn-beli");
-  const tombolKeranjang = document.querySelectorAll(".btn-cart");
-  const tombolCheckout = document.getElementById("btnCart");
-  const iconKeranjang = document.getElementById("keranjang"); // 🔹 icon keranjang
+  const notifikasi = document.getElementById("notifikasiToko");
+  const tombolBeli = document.querySelectorAll(".btn-beli");
+  const tombolKeranjang = document.querySelectorAll(".btn-cart");
+  const tombolCheckout = document.getElementById("btnCart");
 
-  if (buka) {
-    if (notifikasi) notifikasi.style.display = "none";
-
-    tombolBeli.forEach((btn) => (btn.disabled = false));
-    tombolKeranjang.forEach((btn) => (btn.disabled = false));
-    if (tombolCheckout) tombolCheckout.disabled = false;
-
-    // aktifkan kembali icon keranjang
-    if (iconKeranjang) {
-      iconKeranjang.style.opacity = "1";
-      // Hapus handler "tutup" agar fungsi asli kembali jalan
-      iconKeranjang.onclick = null;
-    }
-  } else {
-    if (notifikasi) notifikasi.style.display = "block";
-
-    tombolBeli.forEach((btn) => (btn.disabled = true));
-    tombolKeranjang.forEach((btn) => (btn.disabled = true));
-    if (tombolCheckout) tombolCheckout.disabled = true;
-
-    if (iconKeranjang) {
-      iconKeranjang.style.opacity = "0.5";
-
-      // 🔹 Intercept klik icon keranjang
-      iconKeranjang.onclick = function (e) {
-        e.preventDefault();
-        e.stopPropagation(); // cegah modal tetap terbuka
-        if (typeof showMessage === "function") {
-          showMessage("Info", "Toko sedang tutup, silakan kembali besok.", "info");
-        } else {
-          alert("Toko sedang tutup, silakan kembali besok.");
-        }
-      };
-    }
-  }
+  if (buka) {
+    if (notifikasi) notifikasi.style.display = "none";
+    tombolBeli.forEach((btn) => (btn.disabled = false));
+    tombolKeranjang.forEach((btn) => (btn.disabled = false));    
+    if (tombolCheckout) tombolCheckout.disabled = false;
+  } else {
+    if (notifikasi) notifikasi.style.display = "block";
+    tombolBeli.forEach((btn) => (btn.disabled = true));
+    tombolKeranjang.forEach((btn) => (btn.disabled = true));
+    if (tombolCheckout) tombolCheckout.disabled = true;
+  }
 }
 
 window.onload = cekJamToko;
-setInterval(cekJamToko, 60000); // cek setiap 60 detik
-                          
+setInterval(cekJamToko, 6
+0000); // cek setiap 60 detik
+                         
 
 function checkoutQR() {
   const nama = document.getElementById('nama').value.trim();
@@ -1525,6 +1501,7 @@ function checkoutBeliQR() {
   // Tampilkan modal QR
   tampilkanModalQR(qrURL);
 }
+
 
 
 
