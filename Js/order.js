@@ -1399,17 +1399,32 @@ function cekJamToko() {
   const tombolBeli = document.querySelectorAll(".btn-beli");
   const tombolKeranjang = document.querySelectorAll(".btn-cart");
   const tombolCheckout = document.getElementById("btnCart");
+  const iconKeranjang = document.getElementById("keranjang"); // 🔹 icon keranjang
 
   if (buka) {
     if (notifikasi) notifikasi.style.display = "none";
+
     tombolBeli.forEach((btn) => (btn.disabled = false));
-    tombolKeranjang.forEach((btn) => (btn.disabled = false));    
+    tombolKeranjang.forEach((btn) => (btn.disabled = false));
     if (tombolCheckout) tombolCheckout.disabled = false;
+
+    // aktifkan icon keranjang
+    if (iconKeranjang) {
+      iconKeranjang.style.pointerEvents = "auto";
+      iconKeranjang.style.opacity = "1";
+    }
   } else {
     if (notifikasi) notifikasi.style.display = "block";
+
     tombolBeli.forEach((btn) => (btn.disabled = true));
     tombolKeranjang.forEach((btn) => (btn.disabled = true));
     if (tombolCheckout) tombolCheckout.disabled = true;
+
+    // nonaktifkan icon keranjang
+    if (iconKeranjang) {
+      iconKeranjang.style.pointerEvents = "none"; // tidak bisa diklik
+      iconKeranjang.style.opacity = "0.5"; // abu-abu
+    }
   }
 }
 
@@ -1499,6 +1514,7 @@ function checkoutBeliQR() {
   // Tampilkan modal QR
   tampilkanModalQR(qrURL);
 }
+
 
 
 
