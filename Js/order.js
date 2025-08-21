@@ -1,4 +1,5 @@
 
+
 let keranjang = {};
 function simpanKeranjang() {
   localStorage.setItem("keranjang", JSON.stringify(keranjang));
@@ -678,7 +679,6 @@ function saveEditedAlamat() {
     if (typeof users[username] === "object") {
       users[username].alamat = newAlamat;
     } else {
-      // format lama
       users[username] = { password: users[username], whatsapp: "-", alamat: newAlamat };
     }
     localStorage.setItem("users", JSON.stringify(users));
@@ -738,14 +738,14 @@ function updateAuthStatus() {
         const wa = document.getElementById("panelWhatsApp");
         if (wa) wa.innerText = "-";
       }
-
-          if (users[user] && users[user].alamat) {
-      const alamatInput = document.getElementById("editAlamatInput");
-      if (alamatInput) alamatInput.value = users[user].alamat;
-    } else {
-      const alamatInput = document.getElementById("editAlamatInput");
-      if (alamatInput) alamatInput.value = "";
-    }
+      // 🔹 alamat user
+if (users[user] && users[user].alamat) {
+  const alamatInput = document.getElementById("editAlamatInput");
+  if (alamatInput) alamatInput.value = users[user].alamat;
+} else {
+  const alamatInput = document.getElementById("editAlamatInput");
+  if (alamatInput) alamatInput.value = "";
+}
 
     
       displayAvatar();
@@ -1004,6 +1004,7 @@ function updateBadge() {
 }
 
 function tampilkanModal() {
+  
   const daftar = document.getElementById("daftarKeranjang");
   daftar.innerHTML = "";
   let adaItem = false;
@@ -1091,6 +1092,8 @@ function tampilkanModal() {
     : "none";
   updateTotalTerpilih();
   document.getElementById("modalCart").style.display = "flex";
+
+  
 }
 
 function togglePilih(id, status) {
@@ -1230,6 +1233,7 @@ simpanKeranjang(); // 🔥 simpan setelah checkout
 let produkBeli = null;
 
 function beliSekarang(btn) {
+  
   if (!localStorage.getItem("loginUser")) {
     showMessage("Info", "Silahkan login terlebih dahulu.", "info");
     return;
@@ -1311,6 +1315,8 @@ function beliSekarang(btn) {
 `;
 
   document.getElementById("modalBeli").style.display = "flex";
+
+  
 }
 
 function pilihWarnaBeli(gambar, warna) {
@@ -1389,6 +1395,7 @@ const bukaNonStop = false; // Ganti true jika ingin buka 24 jam
 const jamBuka = 7; // 07.00
 const jamTutup = 21; // 21.00
 
+// Fungsi cekJamToko yang sudah dimodifikasi
 function cekJamToko() {
   const sekarang = new Date();
   const jam = sekarang.getHours();
@@ -1400,22 +1407,49 @@ function cekJamToko() {
   const tombolKeranjang = document.querySelectorAll(".btn-cart");
   const tombolCheckout = document.getElementById("btnCart");
 
+  // Tombol di modal keranjang
+  const btnCheckout = document.getElementById("btnCheckout");
+  const btnCheckoutQR = document.getElementById("btnCheckoutQR");
+
+  // Tombol di modal beli sekarang
+  const btnProsesBeli = document.getElementById("btnProsesBeli");
+  const btnCheckoutBeliQR = document.getElementById("btnCheckoutBeliQR");
+
   if (buka) {
     if (notifikasi) notifikasi.style.display = "none";
     tombolBeli.forEach((btn) => (btn.disabled = false));
     tombolKeranjang.forEach((btn) => (btn.disabled = false));
     if (tombolCheckout) tombolCheckout.disabled = false;
+
+    // Aktifkan tombol di modal keranjang jika ada
+    if (btnCheckout) btnCheckout.disabled = false;
+    if (btnCheckoutQR) btnCheckoutQR.disabled = false;
+
+    // Aktifkan tombol di modal beli sekarang jika ada
+    if (btnProsesBeli) btnProsesBeli.disabled = false;
+    if (btnCheckoutBeliQR) btnCheckoutBeliQR.disabled = false;
   } else {
     if (notifikasi) notifikasi.style.display = "block";
     tombolBeli.forEach((btn) => (btn.disabled = true));
     tombolKeranjang.forEach((btn) => (btn.disabled = true));
     if (tombolCheckout) tombolCheckout.disabled = true;
+
+    // Nonaktifkan tombol di modal keranjang jika ada
+    if (btnCheckout) btnCheckout.disabled = true;
+    if (btnCheckoutQR) btnCheckoutQR.disabled = true;
+
+    // Nonaktifkan tombol di modal beli sekarang jika ada
+    if (btnProsesBeli) btnProsesBeli.disabled = true;
+    if (btnCheckoutBeliQR) btnCheckoutBeliQR.disabled = true;
   }
 }
-window.onload = cekJamToko;
-setInterval(cekJamToko, 60000); // cek setiap 60 detik
+document.addEventListener("DOMContentLoaded", function () {
+  updateStokProduk();
+  cekJamToko(); // Panggil di sini
+  updateAuthStatus();
+});
 
-                       
+
 function checkoutQR() {
   const nama = document.getElementById('nama').value.trim();
   const telepon = document.getElementById('telepon').value.trim();
@@ -1499,22 +1533,3 @@ function checkoutBeliQR() {
   // Tampilkan modal QR
   tampilkanModalQR(qrURL);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
