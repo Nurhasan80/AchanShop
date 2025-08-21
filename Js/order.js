@@ -1385,6 +1385,11 @@ function prosesBeli() {
   }, 3000);
 }
 
+const bukaNonStop = false; // Ganti true jika ingin buka 24 jam
+const jamBuka = 7; // 07.00
+const jamTutup = 21; // 21.00
+
+
   function blokirKeranjang(e) {
   e.preventDefault();
   e.stopPropagation();
@@ -1514,6 +1519,7 @@ function checkoutBeliQR() {
   // Tampilkan modal QR
   tampilkanModalQR(qrURL);
 }
+
 
 
 
