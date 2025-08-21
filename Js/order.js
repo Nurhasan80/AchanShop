@@ -1385,9 +1385,6 @@ function prosesBeli() {
   }, 3000);
 }
 
-const bukaNonStop = false; // Ganti true jika ingin buka 24 jam
-const jamBuka = 12; // 07.00
-const jamTutup = 21; // 21.00
 
 
   function blokirKeranjang(e) {
@@ -1399,6 +1396,10 @@ const jamTutup = 21; // 21.00
     alert("Toko sedang tutup, silakan kembali besok.");
   }
 }
+
+const bukaNonStop = false; // Ganti true jika ingin buka 24 jam
+const jamBuka = 12; // 07.00
+const jamTutup = 21; // 21.00
 
 function cekJamToko() {
   const jam = new Date().getHours();
@@ -1519,6 +1520,7 @@ function checkoutBeliQR() {
   // Tampilkan modal QR
   tampilkanModalQR(qrURL);
 }
+
 
 
 
