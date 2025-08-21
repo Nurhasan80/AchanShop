@@ -668,7 +668,8 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
   <label>Nomor WhatsApp</label>
   <span id="panelWhatsApp"></span>
 </div>
-  <div class="user-detail-item">
+
+<div class="user-detail-item">
   <label>Alamat</label>
   <div class="alamat-edit" style="position: relative; width: 100%; border-radius: 5px;">
     <textarea id="editAlamatInput" disabled
@@ -690,7 +691,8 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
     </button>
   </div>
 </div>
-  
+
+
     <div class="user-detail-item">
       <label>Password</label>
       <span id="panelPassword">••••••••</span>
@@ -736,8 +738,8 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
       <input type="text" id="nama" placeholder="Nama">
       <input type="number" id="telepon" placeholder="Nomor Telepon">
       <textarea id="alamat" placeholder="Alamat Pengiriman"></textarea>
-      <button class="btnCart" onclick="checkout()">Checkout sekarang</button>     
-      <button class="btnCart" onclick="checkoutQR()" >Checkout via QR</button>    
+      <button id="btnCheckout" class="btnCart" onclick="checkout()">Checkout sekarang</button>     
+      <button id="btnCheckoutQR" class="btnCart" onclick="checkoutQR()" >Checkout via QR</button>    
   <div id="qrContainer" style="display:none; text-align:center; margin-top:10px;">
   <div id="qrWrapper" style="display:none; position:relative; display:inline-block;">
    <p>scan untuk melanjutkan pembayaran</p>
@@ -767,9 +769,9 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
       <input type="text" id="namaBeli" placeholder="Nama">
       <input type="number" id="teleponBeli" placeholder="Nomor Telepon">
       <textarea id="alamatBeli" placeholder="Alamat Pengiriman"></textarea>
-      <button class="btnSekarang" onclick="prosesBeli()">Beli sekarang</button>
+      <button id="btnProsesBeli" class="btnSekarang" onclick="prosesBeli()">Beli sekarang</button>
 
-    <button class="btnCart" style="background-color: #ff6600;" onclick="checkoutBeliQR()">Checkout via QR</button>
+    <button id="btnCheckoutBeliQR" class="btnCart" style="background-color: #ff6600;" onclick="checkoutBeliQR()">Checkout via QR</button>
     <div id="qrContainerBeli" style="display:none; text-align:center; margin-top:10px;">
     <div id="qrWrapperBeli" style="display:none; position:relative; display:inline-block;">
     <p>Scan untuk melanjutkan pembayaran</p>
