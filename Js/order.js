@@ -1,5 +1,4 @@
 
-
 let keranjang = {};
 function simpanKeranjang() {
   localStorage.setItem("keranjang", JSON.stringify(keranjang));
@@ -718,6 +717,8 @@ function updateAuthStatus() {
   document.getElementById("authBarAvatar").style.display = user
     ? "inline-block"
     : "none";
+
+  document.getElementById("notificationBell").style.display = user ? "inline-block" : "none";
 
     if (user) {
       const panelUsername = document.getElementById("panelUsername");
@@ -1533,3 +1534,73 @@ function checkoutBeliQR() {
   // Tampilkan modal QR
   tampilkanModalQR(qrURL);
 }
+
+//bellNotif
+const notifIconBell = document.getElementById("notificationBell");
+    const badgeBell = document.getElementById("badgeBell");
+    const notifListBell = document.getElementById("notifListBell");
+    const modalBell = document.getElementById("modalBell");
+    const closeBtnBell = document.getElementById("closeBell");
+
+    // ==== Tambahkan pesan notifikasi di array ini ====
+    let pesanNotifikasiBell = [
+       "Info : Web ini dalam proses penyempurnaan dengan cara menambah fitur-fitur yang relevan dan juga sedang sedang mancari celah-celah bug yang bisa menimbulkan ketidaknayamanan.Jadi mohon maaf bila terjadi bug-bug kecil yang bisa mengganggu",
+    ];
+    // let pesanNotifikasiBell = []; // contoh kosong, jika  menggunakan 2 pesan atau lebih psahkan dengan koma
+
+    // Fungsi untuk update tampilan notifikasi
+    function updateNotifikasiBell() {
+      if (pesanNotifikasiBell.length > 0) {
+        notifIconBell.style.display = "inline-block";
+        badgeBell.textContent = pesanNotifikasiBell.length;
+
+
+        // Tampilkan daftar pesan
+        notifListBell.innerHTML = "";
+        pesanNotifikasiBell.forEach((msg, index) => {
+          let li = document.createElement("li");
+
+        let spanMsg = document.createElement("span");
+        spanMsg.textContent = msg;
+
+        let delBtnBell = document.createElement("button");
+        delBtnBell.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+        delBtnBell.classList.add("deleteBtnBell");
+        delBtnBell.onclick = () => {
+          hapusNotifikasiBell(index);
+        };
+
+        li.appendChild(spanMsg);
+        li.appendChild(delBtnBell);
+        notifListBell.appendChild(li);
+        });
+        
+      } else {
+        notifIconBell.style.display = "none";
+        notifListBell.innerHTML = "<li>Notifikasi disembunyikan</li>";
+      }
+    }
+
+    function hapusNotifikasiBell(index) {
+      pesanNotifikasiBell.splice(index, 1);
+      updateNotifikasiBell();
+    }
+
+    updateNotifikasiBell(); // jalankan saat pertama kali
+
+    // Klik bell → buka modal
+    notifIconBell.addEventListener("click", () => {
+      modalBell.style.display = "block";
+    });
+
+    // Klik close → tutup modal
+    closeBtnBell.addEventListener("click", () => {
+      modalBell.style.display = "none";
+    });
+
+    // Klik area luar modal → tutup modal
+    window.addEventListener("click", (e) => {
+      if (e.target == modalBell) {
+        modalBell.style.display = "none";
+      }
+    });
