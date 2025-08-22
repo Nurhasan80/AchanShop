@@ -758,9 +758,7 @@
   left: -30px;
   font-size: 25px;
   cursor: pointer;
-  
-  display: none; /* default tidak tampil */
-  z-index: 1100;
+  display: none; /* default tidak tampil */  
 }
 
 /* Badge merah */
@@ -1484,3 +1482,4 @@ font-weight: bold;
   
 }
   
+
