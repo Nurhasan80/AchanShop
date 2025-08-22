@@ -273,7 +273,7 @@ body {
 .dark-mode .produk-item p,
 .dark-mode .username-edit,
 .dark-mode .alamat-edit #editAlamatInput,
-.dark-mode .#notifListBell li {
+.dark-mode #notifListBell li {
     background-color: #022633;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
     
@@ -1351,5 +1351,6 @@ h2 {
     
 
 }
+
 
 
