@@ -40,6 +40,13 @@
 
 <!-- menua header login & keranjang Star--->    
 <div id="auth-buttons" class="auth-buttons" style="text-align:right;">
+
+  <!-- Icon notifikasi -->
+  <div class="notificationBell" id="notificationBell" style="display:none;">
+    <i class="fa-solid fa-bell"></i>
+    <span class="badgeBell" id="badgeBell">0</span>
+  </div>
+  
       
   <span id="welcomeText" onclick="toggleUserPanel()">
   </span>
@@ -909,6 +916,15 @@ Di toko kami juga terdapat penjualan dan pembelian alat-alat teknologi jaringan 
     </a>
   </div>
 </div>
+
+  <!-- Modal notif-->
+  <div id="modalBell" class="modalBell">
+    <div class="modalContentBell">
+      <span class="closeBell" id="closeBell">&times;</span>
+      <h3>Daftar Notifikasi</h3>
+      <ul id="notifListBell"></ul>
+    </div>
+  </div>
 
 <!-- notifikasi keranjang -->
 <div id="notifikasi" class="notifikasi">Produk telah ditambahkan ke keranjang</div>
