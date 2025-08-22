@@ -1544,8 +1544,7 @@ const notifIconBell = document.getElementById("notificationBell");
 
     // ==== Tambahkan pesan notifikasi di array ini ====
     let pesanNotifikasiBell = [
-       "Info : Web ini dalam proses penyempurnaan dengan cara menambah fitur-fitur yang relevan dan juga sedang sedang mancari celah-celah bug yang bisa menimbulkan ketidaknayamanan.Jadi mohon maaf bila terjadi bug-bug kecil yang bisa mengganggu",
-    ];
+       "Info 1 : Web ini dalam proses penyempurnaan dengan cara menambah fitur-fitur yang relevan dan juga sedang mancari celah-celah bug yang bisa menimbulkan ketidaknyamanan. Jadi mohon maaf bila terjadi bug-bug kecil yang bisa mengganggu", "Info 2 : Siapapun yang menemukan dan mengakses Web ini, isinya hanya simulasi dan masih dalam proses pengembangan dan belum bisa melakukan transaksi jual dan beli"    ];
     // let pesanNotifikasiBell = []; // contoh kosong, jika  menggunakan 2 pesan atau lebih psahkan dengan koma
 
     // Fungsi untuk update tampilan notifikasi
@@ -1604,3 +1603,4 @@ const notifIconBell = document.getElementById("notificationBell");
         modalBell.style.display = "none";
       }
     });
+
