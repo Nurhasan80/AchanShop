@@ -754,7 +754,7 @@
 /* Bell Icon */
 .notificationBell {
   position: relative;
-  margin-top: 20px;
+  margin-top: 25px;
   left: -30px;
   font-size: 25px;
   cursor: pointer;
@@ -944,9 +944,11 @@ justify-content: center;
   height: 80px;
 }
 
-    .notificationBell {
-  font-size: 20px;
+.notificationBell {
+  font-size: 24px;
 }
+
+
 
   
 }
@@ -1088,9 +1090,8 @@ justify-content: center;
   padding: 8px;
 }
 .notificationBell {
-  font-size: 20px;
-  top: 10px;
-  right: 10px;
+  font-size: 24px;
+  
 }
 
     
@@ -1476,7 +1477,7 @@ font-weight: bold;
 }
 
 .notificationBell {
-  font-size: 20px ;
+  font-size: 24px ;
 }
 
 .badgeBell {
