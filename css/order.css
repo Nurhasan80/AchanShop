@@ -944,6 +944,10 @@ justify-content: center;
   height: 80px;
 }
 
+    .notificationBell {
+  font-size: 20px;
+}
+
   
 }
 
@@ -1084,7 +1088,7 @@ justify-content: center;
   padding: 8px;
 }
 .notificationBell {
-  font-size: 24px;
+  font-size: 20px;
   top: 10px;
   right: 10px;
 }
@@ -1485,6 +1489,7 @@ font-weight: bold;
   
 }
   
+
 
 
 
